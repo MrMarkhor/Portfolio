@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,7 +14,7 @@ SECRET_KEY = 'django-insecure-mg0&zog)h)+gm*x6m(ko&k#4f0wc$+#22r4rcj2_m*69&wwppw
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['sord.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['setio.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -113,4 +114,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-
+django_heroku.settings(locals(), logging=False)
